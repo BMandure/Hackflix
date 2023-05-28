@@ -28,7 +28,6 @@
 
 .modal-btn {
   background-color: var(--color-black);
-  border: 1px solid var(--color-orange);
   border-radius: 0 !important;
 }
 .modal-btn:hover {

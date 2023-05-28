@@ -4,6 +4,9 @@
   justify-content: space-around;
   margin: auto;
 }
+span {
+  cursor: default;
+}
 .filter-container {
   display: flex;
   flex-direction: column;

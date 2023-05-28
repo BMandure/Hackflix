@@ -1,0 +1,18 @@
+.footer {
+  height: 10rem;
+  background-color: var(--color-black-transparent);
+}
+.footer-link,
+.footer-item {
+  text-decoration: none;
+  color: var(--color-orange);
+  transition: ease 1s;
+}
+.footer-link:hover {
+  color: var(--color-orange);
+  text-decoration: underline;
+  transition: ease 1s;
+}
+.footer-item {
+  cursor: default;
+}

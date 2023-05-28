@@ -20,7 +20,7 @@ function MovieContainer() {
         >
           <Rate
             className="d-inline p-1 px-3"
-            defaultValue={10}
+            defaultValue={0}
             onChange={(value) => (
               (rate = value * 2),
               setMovies(movieList.filter((movie) => movie.vote_average >= rate))
