@@ -1,0 +1,14 @@
+.movie-container {
+  min-height: fit-content;
+  width: 80%;
+  justify-content: space-around;
+  margin: auto;
+}
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+}

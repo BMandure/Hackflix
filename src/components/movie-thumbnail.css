@@ -1,0 +1,36 @@
+.movie-thumbnail {
+  height: 450px;
+  margin: 1rem;
+  margin-bottom: 2rem;
+  width: 300px;
+  padding: 0;
+  transition: ease 0.2s;
+}
+.movie-thumbnail:hover {
+  transition: ease 0.2s;
+  cursor: pointer;
+  scale: 1.03;
+}
+
+.movie-rate {
+  margin: auto;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  background-color: var(--color-orange-transparent);
+  display: flex;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 3px solid var(--color-orange);
+  border-top: 0;
+}
+.movie-rate > p {
+  margin: 0;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  padding: 50% 0 50% 0;
+}

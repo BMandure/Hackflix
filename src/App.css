@@ -1,0 +1,38 @@
+:root {
+  --color-orange: rgb(158, 90, 0);
+  --color-orange-transparent: rgba(158, 90, 0, 0.5);
+  --color-black: rgb(40, 40, 40);
+  --color-black-transparent: rgba(26, 26, 26, 0.7);
+}
+
+@font-face {
+  font-family: "LGCafe";
+  src: url("src/assets/fonts/Louis George Cafe.ttf");
+}
+
+body {
+  background-color: var(--color-black);
+}
+#root {
+  width: 100vw;
+  min-height: 100vh;
+}
+.lg-cafe {
+  font-family: LGCafe;
+}
+hr {
+  color: white;
+}
+p {
+  margin: 0;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.column-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.border-title {
+  border-bottom: 2px solid white;
+  padding-bottom: 1rem;
+}
