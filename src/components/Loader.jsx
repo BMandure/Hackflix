@@ -2,7 +2,7 @@ import "./loader.css";
 
 function Loader() {
   return (
-    <div class="loaderRectangle">
+    <div className="loaderRectangle">
       <div></div>
       <div></div>
       <div></div>

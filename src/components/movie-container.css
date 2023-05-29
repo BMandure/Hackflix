@@ -15,3 +15,10 @@ span {
   font-weight: bold;
   width: 100%;
 }
+
+.btn-filter {
+  color: white;
+  background-color: transparent;
+  border: 1px solid var(--color-orange);
+  transition: ease 0.15s;
+}
