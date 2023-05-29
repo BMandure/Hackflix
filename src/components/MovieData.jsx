@@ -12,18 +12,30 @@ function MovieData({ movie }) {
 
   return (
     <>
-      <div
-        className="modal-btn w-100"
-        onClick={() => {
-          setLgShow(true);
-        }}
-      >
-        <p className="movie-title">{movie.title}</p>
-        <img
-          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-          alt={"poster of " + movie.title}
-          className="movie-image"
-        />
+      <div>
+        <div
+          className="modal-btn w-100"
+          onClick={() => {
+            setLgShow(true);
+          }}
+        >
+          <p className="movie-title">{movie.title}</p>
+          <img
+            src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+            alt={"poster of " + movie.title}
+            className="movie-image"
+          />
+          <div className="movie-rate">
+            <ConfigProvider
+              theme={{
+                algorithm: theme.darkAlgorithm,
+              }}
+            >
+              <Rate disabled defaultValue={movie.vote_average / 2} />
+            </ConfigProvider>
+            {movie.vote_average / 2}
+          </div>
+        </div>
       </div>
       <Modal size="lg" show={lgShow} onHide={() => setLgShow(false)}>
         <Modal.Header closeButton closeVariant="white">

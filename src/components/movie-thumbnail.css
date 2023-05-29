@@ -1,5 +1,5 @@
 .movie-thumbnail {
-  height: 450px;
+  height: 457px;
   margin: 1rem;
   margin-bottom: 2rem;
   width: 300px;
@@ -10,7 +10,7 @@
 .movie-thumbnail:hover {
   transition: ease 0.2s;
   cursor: pointer;
-  scale: 1.03;
+  scale: 1.05;
 }
 
 .movie-rate {
@@ -33,7 +33,4 @@
   display: flex;
   justify-content: center;
   padding: 50% 0 50% 0;
-}
-.movie-card {
-  height: 90%;
 }

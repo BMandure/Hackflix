@@ -11,19 +11,7 @@ function MovieThumbnail({ movie }) {
   return (
     <div className="movie-thumbnail col-3">
       {movie ? (
-        <div className="movie-card">
-          <MovieData movie={movie} />
-          <div className="movie-rate">
-            <ConfigProvider
-              theme={{
-                algorithm: theme.darkAlgorithm,
-              }}
-            >
-              <Rate disabled defaultValue={movie.vote_average / 2} />
-            </ConfigProvider>
-            {movie.vote_average / 2}
-          </div>
-        </div>
+        <MovieData movie={movie} />
       ) : (
         <div className="loader-container">
           <Loader />
