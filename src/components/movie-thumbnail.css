@@ -5,6 +5,7 @@
   width: 300px;
   padding: 0;
   transition: ease 0.2s;
+  border: 3px solid var(--color-orange);
 }
 .movie-thumbnail:hover {
   transition: ease 0.2s;
@@ -23,7 +24,6 @@
   justify-content: space-around;
   font-size: 1.2rem;
   font-weight: bold;
-  border: 3px solid var(--color-orange);
   border-top: 0;
 }
 .movie-rate > p {
@@ -33,4 +33,7 @@
   display: flex;
   justify-content: center;
   padding: 50% 0 50% 0;
+}
+.movie-card {
+  height: 90%;
 }

@@ -9,9 +9,9 @@ function MovieThumbnail({ movie }) {
   const [fullscreen, setFullscreen] = useState(true);
 
   return (
-    <div className="movie-thumbnail col-4">
+    <div className="movie-thumbnail col-3">
       {movie ? (
-        <div>
+        <div className="movie-card">
           <MovieData movie={movie} />
           <div className="movie-rate">
             <ConfigProvider

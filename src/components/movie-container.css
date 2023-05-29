@@ -1,6 +1,6 @@
 .movie-container {
-  min-height: fit-content;
-  width: 80%;
+  min-height: 10rem;
+  width: 90%;
   justify-content: space-around;
   margin: auto;
 }

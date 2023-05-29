@@ -8,18 +8,19 @@ import Button from "react-bootstrap/Button";
 import { Rate, ConfigProvider, theme } from "antd";
 
 function MovieData({ movie }) {
-  const [smShow, setSmShow] = useState(false);
   const [lgShow, setLgShow] = useState(false);
 
   return (
     <>
-      <div className="modal-btn">
+      <div
+        className="modal-btn w-100"
+        onClick={() => {
+          setLgShow(true);
+        }}
+      >
         <p className="movie-title">{movie.title}</p>
         <img
-          onClick={() => {
-            setLgShow(true), console.log(movie);
-          }}
-          src={movie.poster_path}
+          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
           alt={"poster of " + movie.title}
           className="movie-image"
         />
@@ -38,7 +39,7 @@ function MovieData({ movie }) {
                   onClick={() => {
                     setLgShow(true);
                   }}
-                  src={movie.poster_path}
+                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                   alt={"poster of " + movie.title}
                   className="img-movie-data"
                 />
@@ -62,7 +63,7 @@ function MovieData({ movie }) {
                     <span>{movie.vote_count}</span>
                   </div>
                 </div>
-                <Button className=" modal-btn w-100">More Info &rarr;</Button>
+                <Button className="more-info w-100">More Info &rarr;</Button>
               </Col>
             </Row>
           </Container>
