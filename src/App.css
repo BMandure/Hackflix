@@ -7,7 +7,11 @@
 
 @font-face {
   font-family: "LGCafe";
-  src: url("src/assets/fonts/Louis George Cafe.ttf");
+  src: url("../src/assets/fonts/lgCafe.ttf");
+}
+@font-face {
+  font-family: "Agero";
+  src: url("../src/assets/fonts/agero.ttf");
 }
 
 body {

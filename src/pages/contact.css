@@ -1,0 +1,50 @@
+.w-font {
+  color: white;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 50%;
+  margin: auto;
+}
+.contact-cards {
+  display: flex;
+  margin: auto;
+}
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.icon-card {
+  height: 5rem;
+}
+.contact-title {
+  color: var(--color-orange);
+  margin: 5rem;
+  text-align: center;
+  font-size: 3rem;
+  font-family: lgCafe;
+}
+.main-container {
+  margin-top: 10rem;
+  height: fit-content;
+}
+
+.link {
+  transition: 0.15s;
+}
+
+.link:hover {
+  filter: drop-shadow(0 0 0.75rem var(--color-orange));
+  scale: 1.2;
+  transition: 0.15s;
+}
+.contact-subtitle {
+  text-align: center;
+  padding: 0;
+  font-size: 1.2rem;
+  font-family: lgCafe;
+}

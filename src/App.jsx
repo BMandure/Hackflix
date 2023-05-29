@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar";
 import "./App.css";
-import Home from "./components/Home";
+import MyRoutes from "./components/Routes";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 function App() {
   const [count, setCount] = useState(0);
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Home />
+      <MyRoutes />
       <Footer />
     </>
   );

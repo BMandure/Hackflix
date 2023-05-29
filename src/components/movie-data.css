@@ -17,31 +17,60 @@
   margin: 2px;
   padding: 0.8rem;
   text-align: center;
-  width: 287px;
+  width: 284px;
   background-color: rgba(47, 47, 47, 0.7);
   color: white;
 }
 
 .modal-btn,
 .more-info {
+  color: white;
   background-color: var(--color-black);
-  border: 2px solid var(--color-orange-transparent) !important;
+  border: 2px solid var(--color-orange) !important;
   border-radius: 0 !important;
 }
 .modal-btn {
+  color: white;
   height: 100%;
+}
+.more-info {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
 .modal-btn:hover,
 .more-info:hover {
+  color: white;
   border-radius: 0 !important;
+}
+.more-info:hover {
+  padding: 0.5rem;
+  color: white;
+  background-color: var(--color-orange) !important;
+  border: 2px solid var(--color-orange) !important;
 }
 .modal-btn:active,
 .more-info:active {
+  color: white;
+  background-color: var(--color-black) !important;
+  border: 2px solid var(--color-orange) !important;
+}
+.modal-info:active {
+  padding: 0.5rem;
+}
+.more-info:disabled {
+  color: grey;
+  padding: 0.5rem;
   background-color: var(--color-black) !important;
   border: 2px solid var(--color-orange-transparent) !important;
 }
 
+.btn-container {
+  display: flex;
+  gap: 50px;
+}
 .img-movie-data {
   width: 100%;
-  border: 2px solid var(--color-orange-transparent) !important;
+  border: 2px solid var(--color-orange) !important;
 }

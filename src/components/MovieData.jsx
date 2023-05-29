@@ -4,8 +4,8 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
 import { Rate, ConfigProvider, theme } from "antd";
+import { NavLink, Link } from "react-router-dom";
 
 function MovieData({ movie }) {
   const [lgShow, setLgShow] = useState(false);
@@ -75,7 +75,17 @@ function MovieData({ movie }) {
                     <span>{movie.vote_count}</span>
                   </div>
                 </div>
-                <Button className="more-info w-100">More Info &rarr;</Button>
+                <div className="btn-container">
+                  <button className="more-info w-100" disabled>
+                    Play (Not implemented)
+                  </button>
+                  <NavLink
+                    to={`/movie/${movie.id}`}
+                    className="more-info w-100"
+                  >
+                    More Info &rarr;
+                  </NavLink>
+                </div>
               </Col>
             </Row>
           </Container>

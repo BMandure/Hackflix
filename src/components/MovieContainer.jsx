@@ -58,7 +58,10 @@ function MovieContainer() {
           <div className="movie-container row">
             {movies.length !== 0 ? (
               movies.map((movie) => (
-                <MovieThumbnail key={movie.id} movie={movie} />
+                <MovieThumbnail
+                  key={Math.floor(String(Math.random() * 10000000000000000))}
+                  movie={movie}
+                />
               ))
             ) : (
               <div className="alert alert-danger w-50" role="alert">

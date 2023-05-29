@@ -1,17 +1,29 @@
-.navbar {
-  z-index: 2;
-  background-color: var(--color-black-transparent);
-  height: 5rem;
-  padding: 0 11% 0 11%;
+.main-error {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.brand-icon {
-  height: 50px;
-  width: 50px;
+.error-text,
+.error-title {
+  color: var(--color-orange);
+}
+.error-title {
+  font-size: 10rem;
+  width: 100%;
+  text-align: center;
 }
 
-.btn-navbar {
+.error-text,
+.go-back {
+  padding: 5rem;
+}
+
+.go-back {
+  width: 50%;
   color: white;
-  min-width: 150px;
   background-color: transparent;
   border: 1px solid var(--color-orange);
   transition: ease 0.15s;
@@ -31,7 +43,7 @@
   z-index: 1;
 }
 
-.btn-navbar:before {
+.go-back:before {
   transition: 0.2s all ease;
   position: absolute;
   top: 0;
@@ -44,25 +56,19 @@
   z-index: -1;
 }
 
-.btn-navbar:hover,
-.btn-navbar:focus {
+.go-back:hover,
+.go-back:focus {
   color: white;
 }
 
-.btn-navbar:hover:before,
-.btn-navbar:focus:before {
+.go-back:hover:before,
+.go-back:focus:before {
   transition: 0.2s all ease;
   left: 0;
   right: 0;
   opacity: 1;
 }
 
-.btn-navbar:active {
+.go-back:active {
   transform: scale(0.9);
-}
-
-.gap-nav {
-  display: flex;
-  width: 22rem;
-  gap: 50px;
 }
