@@ -1,7 +1,16 @@
+@font-face {
+  font-family: "Agero";
+  src: url("src/assets/fonts/agero.ttf");
+}
+
 #header {
   height: 400px;
   margin-top: 5rem;
-  color: white;
+  color: var(--color-orange);
+  text-shadow: 7px 7px 7px var(--color-black);
+  text-decoration: underline;
+  font-size: 2rem;
+  font-family: Agero;
   background-image: url(src/assets/moviesHeader.jpg);
   background-repeat: no-repeat;
   background-size: cover;

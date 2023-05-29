@@ -21,6 +21,7 @@ function MovieThumbnail({ movie }) {
             >
               <Rate disabled defaultValue={movie.vote_average / 2} />
             </ConfigProvider>
+            {movie.vote_average / 2}
           </div>
         </div>
       ) : (

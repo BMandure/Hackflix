@@ -17,6 +17,7 @@ function MovieContainer() {
       `https://api.themoviedb.org/3/discover/movie/?include_adult=false&api_key=9eaf0ca08945585cbfa3a26f189cac4e&page=${lastPage}`
     );
     setMovies([...movies, ...response.data.results]);
+
     setResultMovies([...resultMovies, ...response.data.results]);
   };
 
