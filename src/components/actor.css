@@ -1,0 +1,25 @@
+.actor-card {
+  height: 10rem;
+  width: 80%;
+  margin: 1rem auto 1rem auto;
+}
+
+.actor-img {
+  border: 3px solid var(--color-orange);
+  height: 10rem;
+  width: 7rem;
+}
+.actor-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid var(--color-orange);
+  border-bottom: 3px solid var(--color-orange);
+  border-right: 3px solid var(--color-orange);
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.actor-name {
+  font-size: 1.5rem;
+}

@@ -21,7 +21,11 @@ function MovieData({ movie }) {
         >
           <p className="movie-title">{movie.title}</p>
           <img
-            src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`
+                : "../src/assets/movie-roll.jpg"
+            }
             alt={"poster of " + movie.title}
             className="movie-image"
           />

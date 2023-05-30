@@ -11,14 +11,13 @@ import Actor from "../components/Actor";
 
 function Movie() {
   const params = useParams();
-  const [movie, setMovie] = useState({});
-  const [actors, setActors] = useState([]);
+  const [movie, setMovie] = useState();
+  const [actors, setActors] = useState();
 
   const getMovie = async () => {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${params.id}?api_key=9eaf0ca08945585cbfa3a26f189cac4e&language=en-US`
     );
-    console.log("AGREGAR MAP - Movie.jsx - Linea 21");
     setMovie(response.data);
   };
 
@@ -49,18 +48,26 @@ function Movie() {
                 />
               </div>
               <h1 className="title">{movie.title}</h1>
-              <h2 className="title status">{movie.status}</h2>
+              <h2 className="title status">Status: {movie.status}</h2>
+              <div>
+                <NavLink
+                  to={movie.homepage}
+                  target="_blank"
+                  className="btn-link w-100 my-3"
+                >
+                  GO TO MOVIE PAGE &rarr;
+                </NavLink>
+              </div>
             </Col>
 
             <Col xs={9} className="w-font">
               <h2 className="lg-cafe border-title">Overview</h2>
               <p>{movie.overview}</p>
-              <Row>
-                <Col xs={6}>
-                  <div className="full-item">
-                    <div className="half-item">
+              <Row className="my-4 mx-5">
+                <Col xs={12} className="mx-auto">
+                  <div className="full-item border-0">
+                    <div className="centered-item">
                       <span> Rate</span>
-                      {movie.vote_average}
                       <ConfigProvider
                         theme={{
                           algorithm: theme.darkAlgorithm,
@@ -68,50 +75,75 @@ function Movie() {
                       >
                         <Rate disabled defaultValue={movie.vote_average / 2} />
                       </ConfigProvider>
+                      <div className="centered-item no-column my-2">
+                        <span>Votes</span>
+                        <span>{movie.vote_count}</span>
+                      </div>
                     </div>
-                    <div className="half-item">
-                      <span>Votes</span>
-                      <span>{movie.vote_count}</span>
-                    </div>
-                  </div>
-                  <div className="full-item">
-                    <span>Release date: </span>
-                    <span>{movie.release_date}</span>
-                  </div>
-                  <div className="full-item">
-                    <span>Budget: </span>
-                    <span>$ {movie.budget}</span>
-                  </div>
-                  <div className="full-item">
-                    Production Countries:
-                    <div className="d-flex">
-                      {/*movie.production_countries.map((country) => (
-                      <p>{country.name}</p>
-                    ))*/}
-                    </div>
-                  </div>
-                  <div className="full-item">
-                    Spoken Languages:
-                    <div className="d-flex">
-                      {/*movie.spoken_languages.map((language) => (
-                      <p>{language.name}</p>
-                    ))*/}
-                    </div>
-                  </div>
-                  <div className="full-item">
-                    <NavLink to={movie.homepage} target="_blank">
-                      Go to movie Page
-                    </NavLink>
-                  </div>
-                  <div className="full-item">
-                    Production countries:
-                    {/*movie.production_companies.map((company) => (
-                    <p>{company.name}</p>
-                  ))*/}
                   </div>
                 </Col>
-                <Col xs={6}>Actors</Col>
+                <Col xs={6}>
+                  <div className="full-item row">
+                    <p className="col-6 fw-bold">Release date: </p>
+                    <p className="col-6 align-right">{movie.release_date}</p>
+                  </div>
+
+                  <div className="full-item row">
+                    <p className="col-6 fw-bold">Budget: </p>
+                    <p className="col-6 align-right">$ {movie.budget}</p>
+                  </div>
+
+                  <div className="full-item row">
+                    <p className="col-6 py-0 fw-bold">Production Countries:</p>
+                    <div className="px-0 col-6 align-right">
+                      {movie.production_countries.map((country) => (
+                        <p className="py-0" key={country.iso_3166_1}>
+                          {country.name}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </Col>
+                <Col xs={6}>
+                  <div className="full-item row">
+                    <p className="col-6 fw-bold">Spoken Languages:</p>
+                    <div className="px-0 col-6 align-right">
+                      {movie.spoken_languages.map((language) => (
+                        <p key={language.iso_639_1}>{language.name}</p>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="full-item row">
+                    <p className="col-6 py-0 fw-bold">Production Companies:</p>
+                    <div className="px-0 col-6 align-right">
+                      {movie.production_companies.map((company) => (
+                        <p className="py-0" key={company.id}>
+                          {company.name}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </Col>
               </Row>
+              {!actors ? (
+                <Loader />
+              ) : (
+                <div className="full-item border-0 mx-auto">
+                  <div className="w-100">
+                    <span className="centered-item">Actors</span>
+                    {alert(
+                      "agregar paginador en actors: movie.jsx - linea 135"
+                    )}
+                    {actors.cast.map(
+                      (actor) => (
+                        console.log(actor),
+                        (<Actor key={actor.id} actor={actor} />)
+                      )
+                    )}
+                  </div>
+                </div>
+              )}
             </Col>
           </Row>
         </div>
