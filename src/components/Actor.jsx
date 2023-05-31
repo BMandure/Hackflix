@@ -12,9 +12,8 @@ function Actor({ actor }) {
         alt={`Profile image of ${actor.name}`}
       />
       <div className="actor-info">
-        <strong className="actor-name">
-          {actor.name} as {actor.character}
-        </strong>
+        <strong className="actor-name">{actor.name}</strong>
+        <strong>As: {actor.character}</strong>
       </div>
     </div>
   );

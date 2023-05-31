@@ -11,6 +11,7 @@
 }
 .actor-info {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-top: 3px solid var(--color-orange);
@@ -22,4 +23,6 @@
 
 .actor-name {
   font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }

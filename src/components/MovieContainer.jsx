@@ -4,7 +4,7 @@ import { Rate, ConfigProvider, theme } from "antd";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "./Loader";
-import { BottomScrollListener } from "react-bottom-scroll-listener";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function MovieContainer() {
   const [rate, setRate] = useState(Number(0));
@@ -17,7 +17,7 @@ function MovieContainer() {
     );
     setMovies([...movies, ...response.data.results]);
   };
-
+  /**/
   useEffect(() => {
     setLastPage(Number(1));
     getMovies();
@@ -29,11 +29,6 @@ function MovieContainer() {
 
   return (
     <div className="movie-container">
-      <BottomScrollListener
-        onBottom={() => {
-          setLastPage(lastPage + 1);
-        }}
-      />
       <div className="filter-container my-3 py-2">
         <span>Filter by rate</span>
         <ConfigProvider
@@ -46,15 +41,23 @@ function MovieContainer() {
             defaultValue={1}
             allowClear={false}
             onChange={(value) => {
-              rate === value
-                ? (setMovies([]), getMovies())
-                : (setMovies([]), setRate(value * 2));
+              rate !== value && (setMovies([]), setRate(value * 2));
             }}
           />
         </ConfigProvider>
       </div>
-      {movies.length !== 0 ? (
-        <div>
+
+      {movies.length === 0 ? (
+        <div className="m-5 justify-content-center flex-column w-font title">
+          <h2>Loading</h2>
+          <Loader />
+        </div>
+      ) : (
+        <InfiniteScroll
+          dataLength={movies.length}
+          next={() => setLastPage(lastPage + 1)}
+          hasMore={true}
+        >
           <div className="movie-container row">
             {movies.length !== 0 ? (
               movies.map((movie) => (
@@ -69,9 +72,7 @@ function MovieContainer() {
               </div>
             )}
           </div>
-        </div>
-      ) : (
-        <Loader />
+        </InfiniteScroll>
       )}
     </div>
   );

@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  width: 50%;
+  width: 70%;
   margin: auto;
 }
 .contact-cards {
@@ -29,7 +29,7 @@
   font-family: lgCafe;
 }
 .main-container {
-  margin-top: 10rem;
+  width: 40%;
   height: fit-content;
 }
 
@@ -47,4 +47,23 @@
   padding: 0;
   font-size: 1.2rem;
   font-family: lgCafe;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 3px solid var(--color-orange);
+  padding: 50px;
+  margin-bottom: 2rem;
+}
+input,
+textarea {
+  resize: none;
+  border: 2px solid var(--color-orange);
+  background: var(--color-black);
+  padding: 0.5rem;
+}
+textarea {
+  height: 5rem;
 }

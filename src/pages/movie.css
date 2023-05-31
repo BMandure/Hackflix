@@ -2,9 +2,10 @@
   color: white;
 }
 .movie-cont {
-  margin-top: 5rem;
+  display: flex;
+  align-items: center;
   min-height: 100vh;
-  padding: 5rem 11% 0 11%;
+  padding: 7rem 11% 1rem 11%;
 }
 .movie-poster {
   transition: ease 0.2s;
@@ -116,4 +117,27 @@
 
 .align-right {
   text-align: right;
+}
+.genre-badge {
+  border-bottom: 1px solid var(--color-orange);
+  font-size: 1rem;
+  padding: 0.7rem 0 0.7rem 0;
+  text-align: center;
+}
+.genre-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  gap: 3px;
+}
+.genres-title {
+  font-family: lgCafe;
+  letter-spacing: 3px;
+  font-size: 1.5rem;
+}
+.company-container {
+  display: flex;
+  max-height: 120px;
+  padding: 1rem 0 1rem 0;
 }

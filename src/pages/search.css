@@ -1,0 +1,28 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 3px solid var(--color-orange);
+  padding: 20px;
+  width: 40%;
+  margin: 2rem auto 2rem auto;
+}
+.search-label,
+.alert-search {
+  font-family: lgCafe;
+  font-size: 1.5rem;
+}
+.search,
+.alert-search,
+.search-label {
+  color: white;
+}
+
+.alert-search {
+  width: 50%;
+  display: flex;
+  margin: 1rem 0 1rem 0;
+  border: 3px solid var(--color-orange);
+  justify-content: center;
+  align-items: center;
+}

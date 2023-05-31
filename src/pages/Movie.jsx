@@ -8,16 +8,21 @@ import Row from "react-bootstrap/Row";
 import { Rate, ConfigProvider, theme } from "antd";
 import { NavLink } from "react-router-dom";
 import Actor from "../components/Actor";
+import { CCarousel, CCarouselItem, CImage } from "@coreui/react";
+import Error404 from "./Error404";
 
 function Movie() {
   const params = useParams();
   const [movie, setMovie] = useState();
   const [actors, setActors] = useState();
+  const [error, setError] = useState(false);
 
   const getMovie = async () => {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${params.id}?api_key=9eaf0ca08945585cbfa3a26f189cac4e&language=en-US`
-    );
+    const response = await axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${params.id}?api_key=9eaf0ca08945585cbfa3a26f189cac4e&language=en-US`
+      )
+      .catch(() => setError(true));
     setMovie(response.data);
   };
 
@@ -29,14 +34,20 @@ function Movie() {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getMovie();
     getActors();
   }, []);
 
-  return (
+  return error ? (
+    <Error404 title="Movie Not Found" message="Insert a valid ID" />
+  ) : (
     <>
       {!movie ? (
-        <Loader />
+        <div className="movie-cont justify-content-center flex-column w-font title">
+          <h2>Loading</h2>
+          <Loader />
+        </div>
       ) : (
         <div className="movie-cont">
           <Row>
@@ -50,49 +61,82 @@ function Movie() {
               <h1 className="title">{movie.title}</h1>
               <h2 className="title status">Status: {movie.status}</h2>
               <div>
-                <NavLink
-                  to={movie.homepage}
-                  target="_blank"
-                  className="btn-link w-100 my-3"
-                >
-                  GO TO MOVIE PAGE &rarr;
-                </NavLink>
+                <div className="centered-item">
+                  <span> Rate</span>
+                  <ConfigProvider
+                    theme={{
+                      algorithm: theme.darkAlgorithm,
+                    }}
+                  >
+                    <Rate disabled defaultValue={movie.vote_average / 2} />
+                  </ConfigProvider>
+                  <div className="centered-item no-column my-2">
+                    <span>Votes</span>
+                    <span>{movie.vote_count}</span>
+                  </div>
+                </div>
               </div>
+              {movie.homepage !== null && (
+                <div>
+                  <NavLink
+                    to={movie.homepage}
+                    target="_blank"
+                    className="btn-link w-100 my-3"
+                  >
+                    GO TO MOVIE PAGE &rarr;
+                  </NavLink>
+                </div>
+              )}
             </Col>
 
             <Col xs={9} className="w-font">
-              <h2 className="lg-cafe border-title">Overview</h2>
-              <p>{movie.overview}</p>
               <Row className="my-4 mx-5">
-                <Col xs={12} className="mx-auto">
-                  <div className="full-item border-0">
-                    <div className="centered-item">
-                      <span> Rate</span>
-                      <ConfigProvider
-                        theme={{
-                          algorithm: theme.darkAlgorithm,
-                        }}
-                      >
-                        <Rate disabled defaultValue={movie.vote_average / 2} />
-                      </ConfigProvider>
-                      <div className="centered-item no-column my-2">
-                        <span>Votes</span>
-                        <span>{movie.vote_count}</span>
+                <Col xs={6}>
+                  <h2 className="lg-cafe border-title px-5">Overview</h2>
+                  <p className="p-4">{movie.overview}</p>
+                  <div className="lg-cafe">
+                    <h2 className="border-title">Genres:</h2>
+                    <Row className="genre-container">
+                      {movie.genres.map((genre) => (
+                        <Col xs={5} className="genre-badge">
+                          {genre.name}
+                        </Col>
+                      ))}
+                    </Row>
+                  </div>
+
+                  {!actors ? (
+                    <Loader />
+                  ) : (
+                    <div>
+                      <div className="w-100 my-3">
+                        <h2 className="lg-cafe border-title px-5">Actors</h2>
+
+                        <CCarousel className="p-3" controls>
+                          {actors.cast.map((actor) => (
+                            <CCarouselItem>
+                              <Actor key={actor.id} actor={actor} />
+                            </CCarouselItem>
+                          ))}
+                        </CCarousel>
                       </div>
                     </div>
-                  </div>
+                  )}
                 </Col>
                 <Col xs={6}>
+                  <h2 className="lg-cafe border-title align-right px-5">
+                    Information
+                  </h2>
                   <div className="full-item row">
                     <p className="col-6 fw-bold">Release date: </p>
                     <p className="col-6 align-right">{movie.release_date}</p>
                   </div>
-
                   <div className="full-item row">
                     <p className="col-6 fw-bold">Budget: </p>
                     <p className="col-6 align-right">$ {movie.budget}</p>
+                    <p className="col-6 fw-bold">Revenue: </p>
+                    <p className="col-6 align-right">$ {movie.revenue}</p>
                   </div>
-
                   <div className="full-item row">
                     <p className="col-6 py-0 fw-bold">Production Countries:</p>
                     <div className="px-0 col-6 align-right">
@@ -103,8 +147,6 @@ function Movie() {
                       ))}
                     </div>
                   </div>
-                </Col>
-                <Col xs={6}>
                   <div className="full-item row">
                     <p className="col-6 fw-bold">Spoken Languages:</p>
                     <div className="px-0 col-6 align-right">
@@ -113,12 +155,11 @@ function Movie() {
                       ))}
                     </div>
                   </div>
-
                   <div className="full-item row">
                     <p className="col-6 py-0 fw-bold">Production Companies:</p>
                     <div className="px-0 col-6 align-right">
                       {movie.production_companies.map((company) => (
-                        <p className="py-0" key={company.id}>
+                        <p key={company.id} className="company-name">
                           {company.name}
                         </p>
                       ))}
@@ -126,24 +167,6 @@ function Movie() {
                   </div>
                 </Col>
               </Row>
-              {!actors ? (
-                <Loader />
-              ) : (
-                <div className="full-item border-0 mx-auto">
-                  <div className="w-100">
-                    <span className="centered-item">Actors</span>
-                    {alert(
-                      "agregar paginador en actors: movie.jsx - linea 135"
-                    )}
-                    {actors.cast.map(
-                      (actor) => (
-                        console.log(actor),
-                        (<Actor key={actor.id} actor={actor} />)
-                      )
-                    )}
-                  </div>
-                </div>
-              )}
             </Col>
           </Row>
         </div>

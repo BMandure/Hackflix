@@ -37,11 +37,10 @@ function MovieData({ movie }) {
             >
               <Rate disabled defaultValue={movie.vote_average / 2} />
             </ConfigProvider>
-            {movie.vote_average / 2}
           </div>
         </div>
       </div>
-      <Modal size="lg" show={lgShow} onHide={() => setLgShow(false)}>
+      <Modal size="lg" show={lgShow} centered onHide={() => setLgShow(false)}>
         <Modal.Header closeButton closeVariant="white">
           <Modal.Title>
             <h2 className="lg-cafe m-0">{movie.title}</h2>

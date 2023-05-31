@@ -1,31 +1,7 @@
-.main-error {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.error-text,
-.error-title {
-  color: var(--color-orange);
-}
-.error-text {
-  font-size: 2rem;
-}
-.error-title {
-  font-size: 10rem;
-  width: 100%;
-  text-align: center;
-}
-
-.error-text,
-.go-back {
-  padding: 5rem;
-}
-
-.go-back {
-  width: 50%;
+.goUp {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
   color: white;
   background-color: transparent;
   border: 1px solid var(--color-orange);
@@ -38,7 +14,6 @@
   padding: 0.5rem 1rem 0.5rem 1rem;
   border: 3px solid var(--color-orange);
   border-radius: 2px;
-  position: relative;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
   color: var(--color-orange);
   text-decoration: none;
@@ -46,7 +21,7 @@
   z-index: 1;
 }
 
-.go-back:before {
+.goUp:before {
   transition: 0.2s all ease;
   position: absolute;
   top: 0;
@@ -59,19 +34,19 @@
   z-index: -1;
 }
 
-.go-back:hover,
-.go-back:focus {
+.goUp:hover,
+.goUp:focus {
   color: white;
 }
 
-.go-back:hover:before,
-.go-back:focus:before {
+.goUp:hover:before,
+.goUp:focus:before {
   transition: 0.2s all ease;
   left: 0;
   right: 0;
   opacity: 1;
 }
 
-.go-back:active {
+.goUp:active {
   transform: scale(0.9);
 }
