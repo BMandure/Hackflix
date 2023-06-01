@@ -1,12 +1,17 @@
 .footer {
-  height: 10rem;
+  min-height: 10rem;
+  max-height: max-content;
   background-color: var(--color-black-transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .footer-link,
 .footer-item {
   text-decoration: none;
   color: var(--color-orange);
   transition: ease 1s;
+  padding: 0.5rem;
 }
 .footer-link:hover {
   color: var(--color-orange);
@@ -15,4 +20,11 @@
 }
 .footer-item {
   cursor: default;
+}
+.footer-row {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  text-align: center;
 }

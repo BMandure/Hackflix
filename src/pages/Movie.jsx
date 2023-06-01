@@ -51,54 +51,56 @@ function Movie() {
       ) : (
         <div className="movie-cont">
           <Row>
-            <Col xs={3} className="w-font">
-              <div className="movie-poster">
-                <img
-                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                  alt={`poster of ${movie.title}`}
-                />
-              </div>
-              <h1 className="title">{movie.title}</h1>
-              <h2 className="title status">Status: {movie.status}</h2>
-              <div>
-                <div className="centered-item">
-                  <span> Rate</span>
-                  <ConfigProvider
-                    theme={{
-                      algorithm: theme.darkAlgorithm,
-                    }}
-                  >
-                    <Rate disabled defaultValue={movie.vote_average / 2} />
-                  </ConfigProvider>
-                  <div className="centered-item no-column my-2">
-                    <span>Votes</span>
-                    <span>{movie.vote_count}</span>
+            <Col xs={12} lg={3} className="w-font">
+              <div className="movie-info-container">
+                <div className="movie-poster">
+                  <img
+                    src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                    alt={`poster of ${movie.title}`}
+                  />
+                </div>
+                <h1 className="title">{movie.title}</h1>
+                <h2 className="title status">Status: {movie.status}</h2>
+                <div>
+                  <div className="centered-item">
+                    <span> Rate</span>
+                    <ConfigProvider
+                      theme={{
+                        algorithm: theme.darkAlgorithm,
+                      }}
+                    >
+                      <Rate disabled defaultValue={movie.vote_average / 2} />
+                    </ConfigProvider>
+                    <div className="centered-item no-column my-2">
+                      <span>Votes</span>
+                      <span>{movie.vote_count}</span>
+                    </div>
                   </div>
                 </div>
+                {movie.homepage !== null && (
+                  <div>
+                    <NavLink
+                      to={movie.homepage}
+                      target="_blank"
+                      className="btn-link w-100 my-3"
+                    >
+                      GO TO MOVIE PAGE &rarr;
+                    </NavLink>
+                  </div>
+                )}
               </div>
-              {movie.homepage !== null && (
-                <div>
-                  <NavLink
-                    to={movie.homepage}
-                    target="_blank"
-                    className="btn-link w-100 my-3"
-                  >
-                    GO TO MOVIE PAGE &rarr;
-                  </NavLink>
-                </div>
-              )}
             </Col>
 
-            <Col xs={9} className="w-font">
+            <Col xs={12} lg={9} className="w-font">
               <Row className="my-4 mx-5">
-                <Col xs={6}>
+                <Col xs={12} xl={6}>
                   <h2 className="lg-cafe border-title px-5">Overview</h2>
                   <p className="p-4">{movie.overview}</p>
                   <div className="lg-cafe">
                     <h2 className="border-title">Genres:</h2>
                     <Row className="genre-container">
                       {movie.genres.map((genre) => (
-                        <Col xs={5} className="genre-badge">
+                        <Col xs={5} key={genre.id} className="genre-badge">
                           {genre.name}
                         </Col>
                       ))}
@@ -114,8 +116,8 @@ function Movie() {
 
                         <CCarousel className="p-3" controls>
                           {actors.cast.map((actor) => (
-                            <CCarouselItem>
-                              <Actor key={actor.id} actor={actor} />
+                            <CCarouselItem key={actor.id}>
+                              <Actor actor={actor} />
                             </CCarouselItem>
                           ))}
                         </CCarousel>
@@ -123,7 +125,7 @@ function Movie() {
                     </div>
                   )}
                 </Col>
-                <Col xs={6}>
+                <Col xs={12} xl={6}>
                   <h2 className="lg-cafe border-title align-right px-5">
                     Information
                   </h2>

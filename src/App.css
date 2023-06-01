@@ -44,7 +44,7 @@ p {
 .btn-orange {
   color: white;
   min-width: 150px;
-  background-color: transparent;
+  background-color: var(--color-black-transparent);
   border: 1px solid var(--color-orange);
   transition: ease 0.15s;
   letter-spacing: 2px;

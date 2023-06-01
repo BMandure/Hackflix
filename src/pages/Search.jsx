@@ -27,6 +27,7 @@ function Search() {
 
   const handleChange = (event) => {
     setMovies([]);
+    window.scrollTo(0, 0);
     setSearchField(event.target.value);
   };
 
@@ -41,8 +42,10 @@ function Search() {
           type="text"
           name="search"
           id="search"
+          className="lg-cafe"
           onChange={handleChange}
           value={searchField}
+          placeholder="Movie name..."
         />
       </form>
 

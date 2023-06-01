@@ -6,7 +6,8 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  width: 70%;
+  width: 100%;
+  padding: 0 11% 0 11%;
   margin: auto;
 }
 .contact-cards {
@@ -29,7 +30,7 @@
   font-family: lgCafe;
 }
 .main-container {
-  width: 40%;
+  min-width: 40%;
   height: fit-content;
 }
 

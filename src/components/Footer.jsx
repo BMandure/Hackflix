@@ -1,25 +1,36 @@
 import "./footer.css";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 function Footer() {
   return (
     <footer className="footer">
-      <div className="row w-100 h-100">
-        <div className="col-4 d-flex justify-content-center align-items-center">
+      <Row className="footer-row">
+        <Col
+          lg={4}
+          className="d-flex justify-content-center align-items-center"
+        >
           <a href="#" className="footer-link">
             Terms & Conditions
           </a>
-        </div>
-        <div className="col-4 d-flex justify-content-center align-items-center">
+        </Col>
+        <Col
+          lg={4}
+          className="d-flex justify-content-center align-items-center"
+        >
           <p className="footer-item">
             Made by <strong>@BMandure</strong>
           </p>
-        </div>
-        <div className="col-4 d-flex justify-content-center align-items-center">
+        </Col>
+        <Col
+          lg={4}
+          className="d-flex justify-content-center align-items-center"
+        >
           <p className="footer-item">
             Copyright Hackflix<sup>&#169;</sup> 2023 All rights reserved
           </p>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </footer>
   );
 }

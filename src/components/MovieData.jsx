@@ -14,7 +14,7 @@ function MovieData({ movie }) {
     <>
       <div>
         <div
-          className="modal-btn w-100"
+          className="modal-btn"
           onClick={() => {
             setLgShow(true);
           }}
@@ -49,7 +49,7 @@ function MovieData({ movie }) {
         <Modal.Body className="show-grid modal-body">
           <Container>
             <Row>
-              <Col xs={4}>
+              <Col xs={12} lg={4}>
                 <img
                   onClick={() => {
                     setLgShow(true);
@@ -59,11 +59,15 @@ function MovieData({ movie }) {
                   className="img-movie-data"
                 />
               </Col>
-              <Col xs={8} className="p-3 justify-content-center">
+              <Col xs={12} lg={8} className="p-3 justify-content-center">
                 <h2 className="lg-cafe border-title">Overview</h2>
                 <p>{movie.overview}</p>
-                <div className="d-flex justify-content-around my-4">
-                  <div className="d-flex flex-column align-items-center">
+                <Row className="d-flex justify-content-around my-4">
+                  <Col
+                    xs={12}
+                    md={6}
+                    className="d-flex flex-column align-items-center"
+                  >
                     <span> Rate</span>
                     <ConfigProvider
                       theme={{
@@ -72,12 +76,16 @@ function MovieData({ movie }) {
                     >
                       <Rate disabled defaultValue={movie.vote_average / 2} />
                     </ConfigProvider>
-                  </div>
-                  <div className="d-flex flex-column align-items-center">
+                  </Col>
+                  <Col
+                    xs={12}
+                    md={6}
+                    className="d-flex flex-column align-items-center"
+                  >
                     <span>Votes</span>
                     <span>{movie.vote_count}</span>
-                  </div>
-                </div>
+                  </Col>
+                </Row>
                 <div className="btn-container">
                   <button className="more-info w-100" disabled>
                     Play (Not implemented)
