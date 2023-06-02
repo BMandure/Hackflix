@@ -114,7 +114,12 @@ function Movie() {
                       <div className="w-100 my-3">
                         <h2 className="lg-cafe border-title px-5">Actors</h2>
 
-                        <CCarousel className="p-3" controls>
+                        <CCarousel
+                          className="p-3"
+                          controls
+                          transition="slide"
+                          interval={3000}
+                        >
                           {actors.cast.map((actor) => (
                             <CCarouselItem key={actor.id}>
                               <Actor actor={actor} />

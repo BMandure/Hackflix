@@ -62,12 +62,8 @@ function MovieData({ movie }) {
               <Col xs={12} lg={8} className="p-3 justify-content-center">
                 <h2 className="lg-cafe border-title">Overview</h2>
                 <p>{movie.overview}</p>
-                <Row className="d-flex justify-content-around my-4">
-                  <Col
-                    xs={12}
-                    md={6}
-                    className="d-flex flex-column align-items-center"
-                  >
+                <Row className="vr-cont">
+                  <Col xs={12} md={5} className="votes_rate">
                     <span> Rate</span>
                     <ConfigProvider
                       theme={{
@@ -77,24 +73,20 @@ function MovieData({ movie }) {
                       <Rate disabled defaultValue={movie.vote_average / 2} />
                     </ConfigProvider>
                   </Col>
-                  <Col
-                    xs={12}
-                    md={6}
-                    className="d-flex flex-column align-items-center"
-                  >
+                  <Col xs={12} md={5} className="votes_rate">
                     <span>Votes</span>
                     <span>{movie.vote_count}</span>
                   </Col>
                 </Row>
                 <div className="btn-container">
-                  <button className="more-info w-100" disabled>
-                    Play (Not implemented)
+                  <button className="btn-orange-disabled w-100" disabled>
+                    <i class="bi bi-play">Play</i>
                   </button>
                   <NavLink
                     to={`/movie/${movie.id}`}
-                    className="more-info w-100"
+                    className="btn-orange w-100"
                   >
-                    More Info &rarr;
+                    <i class="bi bi-info-circle h-100"> More Info </i>
                   </NavLink>
                 </div>
               </Col>

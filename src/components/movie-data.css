@@ -69,9 +69,23 @@
 
 .btn-container {
   display: flex;
+  align-items: center;
   gap: 50px;
 }
 .img-movie-data {
   width: 100%;
   border: 2px solid var(--color-orange) !important;
+}
+.votes_rate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+.vr-cont {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0.6rem 1rem 0.6rem;
+  align-items: center;
+  gap: 20px;
 }

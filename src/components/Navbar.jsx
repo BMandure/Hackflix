@@ -4,6 +4,7 @@ import useIsOnline from "../hooks/useIsOnline";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Search from "../components/Search";
 import { MenuOutlined } from "@ant-design/icons";
 
 function NavScroll() {
@@ -28,6 +29,7 @@ function NavScroll() {
         </Navbar.Toggle>
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0 gap-nav" navbarScroll>
+            <Search />
             <Link to="/about" className="btn-orange bg-dark">
               About
             </Link>

@@ -33,6 +33,7 @@
   cursor: pointer;
 }
 
-.show {
+.show,
+.collapsing {
   padding: 2rem 0 2rem 0;
 }
