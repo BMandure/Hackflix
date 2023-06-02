@@ -19,11 +19,11 @@ function NavScroll() {
             className="brand-icon"
           />
         </Link>
-        {isOnline ? (
+        {/*isOnline ? (
           <i className="bi text-success bi-wifi icon-online"> Online</i>
         ) : (
           <i className="bi text-danger bi-wifi-off icon-online"> Offline</i>
-        )}
+        )*/}
         <Navbar.Toggle aria-controls="navbarScroll" className="hamburger">
           <MenuOutlined className="image-hamburger" />
         </Navbar.Toggle>

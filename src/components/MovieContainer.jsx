@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Row } from "react-bootstrap";
 
 function MovieContainer() {
   const [rate, setRate] = useState(Number(0));
@@ -58,7 +59,7 @@ function MovieContainer() {
           next={() => setLastPage(lastPage + 1)}
           hasMore={true}
         >
-          <div className="movie-container row">
+          <Row className="movie-container">
             {movies.length !== 0 ? (
               movies.map((movie) => (
                 <MovieThumbnail
@@ -71,7 +72,7 @@ function MovieContainer() {
                 There are not movies with this rate
               </div>
             )}
-          </div>
+          </Row>
         </InfiniteScroll>
       )}
     </div>

@@ -80,13 +80,14 @@ function MovieData({ movie }) {
                 </Row>
                 <div className="btn-container">
                   <button className="btn-orange-disabled w-100" disabled>
-                    <i class="bi bi-play">Play</i>
+                    <i className="bi bi-play">Play</i>
                   </button>
+                  <small className="note">Outside project's scope</small>
                   <NavLink
                     to={`/movie/${movie.id}`}
                     className="btn-orange w-100"
                   >
-                    <i class="bi bi-info-circle h-100"> More Info </i>
+                    <i className="bi bi-info-circle h-100"> More Info </i>
                   </NavLink>
                 </div>
               </Col>

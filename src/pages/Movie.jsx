@@ -140,9 +140,19 @@ function Movie() {
                   </div>
                   <div className="full-item row">
                     <p className="col-6 fw-bold">Budget: </p>
-                    <p className="col-6 align-right">$ {movie.budget}</p>
+                    <p className="col-6 align-right">
+                      {movie.budget.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                      })}
+                    </p>
                     <p className="col-6 fw-bold">Revenue: </p>
-                    <p className="col-6 align-right">$ {movie.revenue}</p>
+                    <p className="col-6 align-right">
+                      {movie.revenue.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                      })}
+                    </p>
                   </div>
                   <div className="full-item row">
                     <p className="col-6 py-0 fw-bold">Production Countries:</p>

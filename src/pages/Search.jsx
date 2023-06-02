@@ -66,11 +66,12 @@ function Search() {
                 ))
               ) : searchField === "" ? (
                 <div className=" alert-search" role="alert">
-                  Start searching something
+                  &uarr; Start searching something &uarr;
                 </div>
               ) : (
                 <div className=" alert-search" role="alert">
-                  There are not movies with this title
+                  Hmmm... I didn't find any movie with the name: "{searchField}
+                  ".
                 </div>
               )}
             </div>

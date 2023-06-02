@@ -3,6 +3,35 @@
 }
 
 .about-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
-  padding: 5rem;
+  width: 100%;
+  padding: 7rem 11% 0 11%;
+  margin: auto;
+}
+.title-about {
+  color: var(--color-orange);
+  margin: 5rem;
+  text-align: center;
+  font-size: 3rem;
+}
+.text-about,
+.title-about {
+  font-family: lgCafe;
+}
+.border-about {
+  padding: 4rem;
+  border: 3px solid var(--color-orange);
+}
+.strongify {
+  font-weight: bold;
+  color: var(--color-orange);
+}
+.outline {
+  text-decoration: underline;
+}
+.outline:hover {
+  color: var(--color-orange-transparent);
 }
