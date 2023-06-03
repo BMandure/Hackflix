@@ -1,11 +1,17 @@
 import React from "react";
 import "./scrollUp.css";
+import { useScrollPosition } from "../hooks/useItsAtTop";
 
-function ScrollUp() {
+function ScrollUp(show) {
+  const { scrollPos } = useScrollPosition();
   return (
-    <button className="goUp bg-dark" onClick={() => window.scrollTo(0, 0)}>
-      &uarr; Go Up &uarr;
-    </button>
+    <>
+      {scrollPos && (
+        <button className="goUp bg-dark" onClick={() => window.scrollTo(0, 0)}>
+          &uarr; Scroll to Top &uarr;
+        </button>
+      )}
+    </>
   );
 }
 

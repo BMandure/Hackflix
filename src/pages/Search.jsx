@@ -5,7 +5,6 @@ import axios from "axios";
 import Loader from "../components/Loader";
 import MovieThumbnail from "../components/MovieThumbnail";
 import InfiniteScroll from "react-infinite-scroll-component";
-import ScrollUp from "../components/ScrollUp";
 
 function Search() {
   const [movies, setMovies] = useState([]);
@@ -66,7 +65,7 @@ function Search() {
                 ))
               ) : searchField === "" ? (
                 <div className=" alert-search" role="alert">
-                  &uarr; Start searching something &uarr;
+                  Start searching something
                 </div>
               ) : (
                 <div className=" alert-search" role="alert">
@@ -80,7 +79,6 @@ function Search() {
       ) : (
         <Loader />
       )}
-      <ScrollUp />
     </>
   );
 }

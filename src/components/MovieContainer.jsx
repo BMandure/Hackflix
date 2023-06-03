@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 function MovieContainer() {
   const [rate, setRate] = useState(Number(0));
@@ -18,7 +18,7 @@ function MovieContainer() {
     );
     setMovies([...movies, ...response.data.results]);
   };
-  /**/
+
   useEffect(() => {
     setLastPage(Number(1));
     getMovies();
