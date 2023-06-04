@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 function About() {
   return (
     <div className="about-cont w-font">
-      <h1 className="title-about">About the project...</h1>
+      <h1 className="title-about">About the project</h1>
       <Row className="border-about">
-        <Col xs={6}>
+        <Col xs={12} lg={6} className="about-subcontainer">
           <p className="w-font">
             Proyect made during{" "}
             <Link
@@ -41,40 +41,36 @@ function About() {
             's API .
           </p>
         </Col>
-        <Col xs={6}>
-          <p className="w-font">
-            Proyecto realizado durante el{" "}
-            <strong className="strongify">Coding Bootcamp de </strong>
-            <Link
-              to="https://ha.dev/"
-              className="strongify outline"
-              target="_blank"
-            >
-              Hack Academy
-            </Link>{" "}
-            , un curso de modalidad full-time de más de 600 horas de dedicación
-            a lo largo de tres meses y basado en el ecosistema JavaScript que
-            tiene como objetivo simular una aplicación de streaming de películas
-            y a la vez, brindar información sobre la misma.
-          </p>
-          <p>
-            Fue diseñada con una{" "}
-            <strong className="strongify">arquitectura MVC</strong> y como una{" "}
-            <strong className="strongify">single page application</strong>,
-            utilizando <strong className="strongify">React</strong> para
-            maquetar y consultando mediante llamadas AJAX a una API de{" "}
-            <strong className="strongify">
-              {" "}
-              <Link
-                to="https://www.themoviedb.org/"
-                className="strongify outline"
-                target="_blank"
-              >
-                The Movie Database (TMDB)
-              </Link>
-            </strong>
-            .
-          </p>
+        <Col xs={12} lg={6}>
+          <h3 className="subtitle-about">Technologies</h3>
+          <Row>
+            <Col>
+              <div className="technologies">
+                <img
+                  src="src/assets/4691292_react native_react_icon.svg"
+                  alt=""
+                  className="about-img"
+                />
+                React
+              </div>
+            </Col>
+            <Col>
+              <div className="technologies">
+                <img
+                  src="src/assets/bootstrap.svg"
+                  alt=""
+                  className="about-img"
+                />{" "}
+                Bootstrap
+              </div>
+            </Col>
+            <Col>
+              <div className="technologies">
+                <img src="src/assets/css3.svg" alt="" className="about-img" />{" "}
+                CSS 3
+              </div>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </div>

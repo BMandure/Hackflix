@@ -9,7 +9,7 @@ function Contact() {
   return (
     <>
       <div className="contact-container w-font">
-        <div className="main-container my-auto">
+        <div className="main-container">
           <h1 className="contact-title">Contact Me</h1>
           <form
             action="https://formspree.io/f/xjvddnel"
@@ -19,7 +19,13 @@ function Contact() {
             <label htmlFor="name" className="lg-cafe">
               Name
             </label>
-            <input type="text" id="name" name="name" placeholder="John" />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="John"
+              required
+            />
             <label htmlFor="email" className="lg-cafe">
               Email
             </label>
@@ -27,7 +33,8 @@ function Contact() {
               type="email"
               id="email"
               name="email"
-              placeholder="email@example"
+              placeholder="email@example.com"
+              required
             />
             <label htmlFor="message" className="lg-cafe">
               Message
@@ -37,7 +44,12 @@ function Contact() {
               field="email"
               errors={state.errors}
             />
-            <textarea id="message" name="message" placeholder="Hello..." />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Hello..."
+              required
+            />
             <ValidationError
               prefix="Message"
               field="message"

@@ -9,6 +9,13 @@ function Footer() {
         <p>
           Made by <strong>MandureDev</strong>
         </p>
+        <p>
+          Hackflix{" "}
+          <sup>
+            <i className="bi bi-c-circle"></i>
+          </sup>{" "}
+          2023 - All rights reserved
+        </p>
       </div>
     </footer>
   );

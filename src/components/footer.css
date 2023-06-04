@@ -24,7 +24,7 @@
 }
 .footer-row {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   height: 100%;
   width: 90%;
   text-align: center;

@@ -30,8 +30,9 @@
   font-family: lgCafe;
 }
 .main-container {
-  min-width: 40%;
+  min-width: 50%;
   height: fit-content;
+  margin: 2rem 0 2rem 0;
 }
 
 .link {

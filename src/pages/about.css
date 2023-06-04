@@ -8,14 +8,20 @@
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  padding: 7rem 11% 0 11%;
+  padding: 7rem 11% 7rem 11%;
   margin: auto;
 }
-.title-about {
+.title-about,
+.subtitle-about {
   color: var(--color-orange);
   margin: 5rem;
   text-align: center;
   font-size: 3rem;
+}
+.subtitle-about {
+  font-size: 2.5rem;
+  margin: 2rem;
+  font-family: lgCafe;
 }
 .text-about,
 .title-about {
@@ -24,6 +30,11 @@
 .border-about {
   padding: 4rem;
   border: 3px solid var(--color-orange);
+}
+.about-subcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .strongify {
   font-weight: bold;
@@ -34,4 +45,26 @@
 }
 .outline:hover {
   color: var(--color-orange-transparent);
+}
+.about-img {
+  height: 50px;
+  transition: 0.15s;
+}
+
+.about-img:hover {
+  filter: drop-shadow(0 0 0.75rem var(--color-orange));
+  scale: 1.2;
+  transition: 0.15s;
+}
+.technologies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 2rem;
+  font-family: lgCafe;
+  letter-spacing: 3px;
+  line-height: 2rem;
+  border-bottom: 1px solid var(--color-orange);
 }
