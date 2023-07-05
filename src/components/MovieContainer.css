@@ -1,0 +1,7 @@
+.rate-movie-container {
+  display: inline;
+  padding: 0.5rem;
+}
+.rate-movie-container:hover {
+  cursor: pointer;
+}

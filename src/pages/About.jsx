@@ -17,7 +17,7 @@ function About() {
             >
               Hack Academy
             </Link>
-            's Code Bootcamp , a full-time course with +600 hours of dedication
+            's Coding Bootcamp, a full-time course with +600 hours of dedication
             over 3 months and based in a JavaScript ecosistem. Its purpose is to
             be a web application for streaming movies that also provides
             detailed information about them.

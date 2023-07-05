@@ -6,10 +6,23 @@ import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import { Rate, ConfigProvider, theme } from "antd";
 import { NavLink, Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function MovieData({ movie }) {
   const [lgShow, setLgShow] = useState(false);
-
+  const notifyOutside = () => {
+    toast.warn("Outside project's scope", {
+      position: "bottom-left",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
   return (
     <>
       <div>
@@ -79,10 +92,9 @@ function MovieData({ movie }) {
                   </Col>
                 </Row>
                 <div className="btn-container">
-                  <button className="btn-orange-disabled w-100" disabled>
+                  <button className="btn-orange w-100" onClick={notifyOutside}>
                     <i className="bi bi-play">Play</i>
                   </button>
-                  <small className="note">Outside project's scope</small>
                   <NavLink
                     to={`/movie/${movie.id}`}
                     className="btn-orange w-100"
@@ -95,6 +107,7 @@ function MovieData({ movie }) {
           </Container>
         </Modal.Body>
       </Modal>
+      <ToastContainer />
     </>
   );
 }
