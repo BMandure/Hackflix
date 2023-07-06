@@ -1,5 +1,6 @@
 #header {
   height: 500px;
+  max-width: 100vw;
   color: var(--color-orange);
   text-shadow: 7px 7px 7px var(--color-black);
   letter-spacing: 0.5rem;
@@ -25,4 +26,10 @@
   left: 0;
   bottom: 0;
   background-image: linear-gradient(to top, var(--color-black), transparent);
+}
+
+@media only screen and (max-width: 798px) {
+  #header {
+    font-size: 1.2rem;
+  }
 }

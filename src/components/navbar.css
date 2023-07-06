@@ -4,7 +4,7 @@
   height: 5rem;
   padding: 0 11% 0 11%;
   position: fixed;
-  width: 100%;
+  width: 100vw;
 }
 .brand-icon {
   height: 65px;
@@ -36,4 +36,9 @@
 .show,
 .collapsing {
   padding: 2rem 0 2rem 0;
+}
+@media only screen and (max-width: 798px) {
+  .navbar {
+    padding: 0 6% 0 6%;
+  }
 }
