@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 import Actor from "../components/Actor";
 import { CCarousel, CCarouselItem, CImage } from "@coreui/react";
 import Error404 from "./Error404";
-import imgPoster from "../src/assets/movie-roll.jpg";
+import imgPoster from "../assets/movie-roll.jpg";
 
 function Movie() {
   const params = useParams();

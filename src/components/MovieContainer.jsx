@@ -18,7 +18,8 @@ function MovieContainer() {
       url: "https://api.themoviedb.org/3/discover/movie",
       params: {
         api_key: "9eaf0ca08945585cbfa3a26f189cac4e",
-        include_adult: false,
+        "certification.lte": "R",
+        certification_country: "US",
         page: lastPage,
         "vote_average.gte": rate,
       },

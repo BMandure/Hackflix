@@ -9,7 +9,7 @@ import { NavLink, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import imgPoster from "../src/assets/movie-roll.jpg";
+import imgPoster from "../assets/movie-roll.jpg";
 
 function MovieData({ movie }) {
   const [lgShow, setLgShow] = useState(false);

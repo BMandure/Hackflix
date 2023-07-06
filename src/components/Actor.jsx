@@ -1,5 +1,5 @@
 import "./actor.css";
-import imgPoster from "../src/assets/movie-roll.jpg";
+import imgPoster from "../assets/movie-roll.jpg";
 function Actor({ actor }) {
   return (
     <div className="d-flex actor-card">
