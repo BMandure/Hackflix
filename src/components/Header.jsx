@@ -2,7 +2,7 @@ import "./Header.css";
 
 function Header() {
   return (
-    <header id="header" style={{ backgroundImage: "/assets/moviesHeader.jpg" }}>
+    <header id="header">
       <h1>HACKFLIX</h1>
     </header>
   );

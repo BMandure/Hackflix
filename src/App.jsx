@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import "./App.css";
+import { useEffect } from "react";
 import MyRoutes from "./components/Routes";
 import NavScroll from "./components/Navbar";
 import Footer from "./components/Footer";

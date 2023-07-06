@@ -6,6 +6,7 @@
   text-decoration: underline;
   font-size: 2.5rem;
   font-family: Agero;
+  background-image: url("../assets/moviesHeader.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
