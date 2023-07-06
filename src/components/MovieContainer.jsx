@@ -14,7 +14,7 @@ function MovieContainer() {
 
   const getMovies = async () => {
     const response = await axios.get(
-      `http://api.themoviedb.org/3/discover/movie/?include_adult=false&api_key=9eaf0ca08945585cbfa3a26f189cac4e&page=${lastPage}&vote_average.gte=${rate}`
+      `https://api.themoviedb.org/3/discover/movie/?include_adult=false&api_key=9eaf0ca08945585cbfa3a26f189cac4e&page=${lastPage}&vote_average.gte=${rate}`
     );
     setMovies([...movies, ...response.data.results]);
   };
