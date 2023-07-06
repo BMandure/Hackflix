@@ -13,9 +13,16 @@ function MovieContainer() {
   const [lastPage, setLastPage] = useState(Number(1));
 
   const getMovies = async () => {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie/?include_adult=false&api_key=9eaf0ca08945585cbfa3a26f189cac4e&page=${lastPage}&vote_average.gte=${rate}`
-    );
+    const response = await axios({
+      method: "GET",
+      url: "https://api.themoviedb.org/3/discover/movie",
+      params: {
+        api_key: "9eaf0ca08945585cbfa3a26f189cac4e",
+        include_adult: false,
+        page: lastPage,
+        "vote_average.gte": rate,
+      },
+    });
     setMovies([...movies, ...response.data.results]);
   };
 
