@@ -7,17 +7,15 @@ import Navbar from "react-bootstrap/Navbar";
 import Search from "../components/Search";
 import { MenuOutlined } from "@ant-design/icons";
 
+import logo from "../assets/hf_logo.png";
+
 function NavScroll() {
   const isOnline = useIsOnline();
   return (
     <Navbar expand="lg" className="navbar">
       <Container fluid>
         <Link to="/" className="navbar-brand">
-          <img
-            src="/assets/hf_logo.png"
-            alt="hackflix_logo"
-            className="brand-icon"
-          />
+          <img src={logo} alt="hackflix_logo" className="brand-icon" />
         </Link>
         <Navbar.Toggle aria-controls="navbarScroll" className="hamburger">
           <MenuOutlined className="image-hamburger" />
