@@ -1,4 +1,5 @@
 import "./actor.css";
+import imgPoster from "../src/assets/movie-roll.jpg";
 function Actor({ actor }) {
   return (
     <div className="d-flex actor-card">
@@ -6,7 +7,7 @@ function Actor({ actor }) {
         className="actor-img"
         src={
           actor.profile_path === null
-            ? "../src/assets/movie-roll.jpg"
+            ? imgPoster
             : `https://image.tmdb.org/t/p/original/${actor.profile_path}`
         }
         alt={`Profile image of ${actor.name}`}

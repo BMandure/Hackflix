@@ -10,6 +10,7 @@ import { NavLink } from "react-router-dom";
 import Actor from "../components/Actor";
 import { CCarousel, CCarouselItem, CImage } from "@coreui/react";
 import Error404 from "./Error404";
+import imgPoster from "../src/assets/movie-roll.jpg";
 
 function Movie() {
   const params = useParams();
@@ -55,7 +56,13 @@ function Movie() {
               <div className="movie-info-container">
                 <div className="movie-poster">
                   <img
-                    src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                    src={
+                      movie.poster_path
+                        ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`
+                        : {
+                            imgPoster,
+                          }
+                    }
                     alt={`poster of ${movie.title}`}
                   />
                 </div>
