@@ -1,13 +1,15 @@
 import "./footer.css";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-row">
         <p>
-          Made by <strong>MandureDev</strong>
+          Made by{" "}
+          <Link to="/about" className="strongify">
+            MandureDev
+          </Link>
         </p>
         <p>
           Hackflix{" "}

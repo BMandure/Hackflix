@@ -8,7 +8,7 @@ function ScrollUp(show) {
     <>
       {scrollPos && (
         <button className="goUp bg-dark" onClick={() => window.scrollTo(0, 0)}>
-          &uarr; Scroll to Top &uarr;
+          &uarr;
         </button>
       )}
     </>

@@ -36,10 +36,12 @@
   flex-direction: column;
   justify-content: center;
 }
-.strongify {
+.strongify,
+.strongify:visited {
   font-weight: bold;
   color: var(--color-orange);
 }
+
 .outline {
   text-decoration: underline;
 }

@@ -10,7 +10,7 @@
   text-transform: uppercase;
   display: inline-block;
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border: 3px solid var(--color-orange);
   border-radius: 2px;

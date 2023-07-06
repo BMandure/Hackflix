@@ -51,7 +51,7 @@ function Movie() {
         </div>
       ) : (
         <div className="movie-cont">
-          <Row>
+          <Row className="movie-row">
             <Col xs={12} lg={3} className="w-font">
               <div className="movie-info-container">
                 <div className="movie-poster">
@@ -68,7 +68,7 @@ function Movie() {
                 <h2 className="title status">Status: {movie.status}</h2>
                 <div>
                   <div className="centered-item">
-                    <span> Rate</span>
+                    <span>Rate</span>
                     <ConfigProvider
                       theme={{
                         algorithm: theme.darkAlgorithm,
@@ -97,15 +97,21 @@ function Movie() {
             </Col>
 
             <Col xs={12} lg={9} className="w-font">
-              <Row className="my-4 mx-5">
+              <Row className="overview-container">
                 <Col xs={12} xl={6}>
-                  <h2 className="lg-cafe border-title px-5">Overview</h2>
+                  <h2 className="lg-cafe border-title">Overview</h2>
                   <p className="p-4">{movie.overview}</p>
                   <div className="lg-cafe">
                     <h2 className="border-title">Genres:</h2>
                     <Row className="genre-container">
                       {movie.genres.map((genre) => (
-                        <Col xs={5} key={genre.id} className="genre-badge">
+                        <Col
+                          xs={12}
+                          sm={4}
+                          md={3}
+                          key={genre.id}
+                          className="genre-badge"
+                        >
                           {genre.name}
                         </Col>
                       ))}
@@ -117,14 +123,9 @@ function Movie() {
                   ) : (
                     <div>
                       <div className="w-100 my-3">
-                        <h2 className="lg-cafe border-title px-5">Actors</h2>
+                        <h2 className="lg-cafe border-title">Actors</h2>
 
-                        <CCarousel
-                          className="p-3"
-                          controls
-                          transition="slide"
-                          interval={3000}
-                        >
+                        <CCarousel controls transition="slide" interval={3000}>
                           {actors.cast.map((actor) => (
                             <CCarouselItem key={actor.id}>
                               <Actor actor={actor} />
@@ -136,23 +137,21 @@ function Movie() {
                   )}
                 </Col>
                 <Col xs={12} xl={6}>
-                  <h2 className="lg-cafe border-title align-right px-5">
-                    Information
-                  </h2>
+                  <h2 className="lg-cafe border-title">Information</h2>
                   <div className="full-item row">
-                    <p className="col-6 fw-bold">Release date: </p>
-                    <p className="col-6 align-right">{movie.release_date}</p>
+                    <p className="w-50 fw-bold">Release date: </p>
+                    <p className="w-50 align-right">{movie.release_date}</p>
                   </div>
                   <div className="full-item row">
-                    <p className="col-6 fw-bold">Budget: </p>
-                    <p className="col-6 align-right">
+                    <p className="w-50 fw-bold">Budget: </p>
+                    <p className="w-50 align-right">
                       {movie.budget.toLocaleString("en-US", {
                         style: "currency",
                         currency: "USD",
                       })}
                     </p>
-                    <p className="col-6 fw-bold">Revenue: </p>
-                    <p className="col-6 align-right">
+                    <p className="w-50 fw-bold">Revenue: </p>
+                    <p className="w-50 align-right">
                       {movie.revenue.toLocaleString("en-US", {
                         style: "currency",
                         currency: "USD",
@@ -160,20 +159,22 @@ function Movie() {
                     </p>
                   </div>
                   <div className="full-item row">
-                    <p className="col-6 py-0 fw-bold">Production Countries:</p>
+                    <p className="w-50 py-0 fw-bold">Production Countries:</p>
                     <div className="px-0 col-6 align-right">
                       {movie.production_countries.map((country) => (
-                        <p className="py-0" key={country.iso_3166_1}>
+                        <p className="py-0 px-0" key={country.iso_3166_1}>
                           {country.name}
                         </p>
                       ))}
                     </div>
                   </div>
                   <div className="full-item row">
-                    <p className="col-6 fw-bold">Spoken Languages:</p>
+                    <p className="w-50 fw-bold">Spoken Languages:</p>
                     <div className="px-0 col-6 align-right">
                       {movie.spoken_languages.map((language) => (
-                        <p key={language.iso_639_1}>{language.name}</p>
+                        <p key={language.iso_639_1} className="px-0 py-0">
+                          {language.name}
+                        </p>
                       ))}
                     </div>
                   </div>
@@ -181,7 +182,7 @@ function Movie() {
                     <p className="col-6 py-0 fw-bold">Production Companies:</p>
                     <div className="px-0 col-6 align-right">
                       {movie.production_companies.map((company) => (
-                        <p key={company.id} className="company-name">
+                        <p key={company.id} className="company-name px-0 py-0">
                           {company.name}
                         </p>
                       ))}
@@ -193,7 +194,7 @@ function Movie() {
           </Row>
         </div>
       )}
-      <NavLink to="/" className="go-back-movie">
+      <NavLink to="/" className="go-back-movie bg-dark">
         &larr; Go Back
       </NavLink>
     </>

@@ -17,9 +17,11 @@ function Search() {
     );
     setMovies([...movies, ...response.data.results]);
   };
+
   useEffect(() => {
     getMovies(searchField);
   }, [searchField]);
+
   useEffect(() => {
     getMovies(searchField);
   }, [page]);
