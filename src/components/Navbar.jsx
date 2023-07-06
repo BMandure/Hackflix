@@ -14,7 +14,7 @@ function NavScroll() {
       <Container fluid>
         <Link to="/" className="navbar-brand">
           <img
-            src="/src/assets/hf_logo.png"
+            src="../assets/hf_logo.png"
             alt="hackflix_logo"
             className="brand-icon"
           />
