@@ -69,7 +69,11 @@ function MovieData({ movie }) {
                   onClick={() => {
                     setLgShow(true);
                   }}
-                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                  src={
+                    movie.poster_path
+                      ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`
+                      : imgPoster
+                  }
                   alt={"poster of " + movie.title}
                   className="img-movie-data"
                 />
