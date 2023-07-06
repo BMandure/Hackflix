@@ -8,7 +8,6 @@ function Home() {
     <div id="home">
       <Header />
       <MovieContainer />
-
       <ScrollUp />
     </div>
   );
