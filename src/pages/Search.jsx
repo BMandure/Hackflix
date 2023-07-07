@@ -19,6 +19,7 @@ function Search() {
   };
 
   useEffect(() => {
+    setMovies([]);
     getMovies(searchField);
   }, [searchField]);
 
