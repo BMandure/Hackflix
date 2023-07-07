@@ -28,7 +28,7 @@
   font-family: lgCafe;
 }
 .border-about {
-  padding: 4rem;
+  padding: 3rem;
   border: 3px solid var(--color-orange);
 }
 .about-subcontainer {
@@ -50,6 +50,7 @@
 }
 .about-img {
   height: 50px;
+  width: 50px;
   transition: 0.15s;
 }
 
@@ -68,5 +69,10 @@
   font-family: lgCafe;
   letter-spacing: 3px;
   line-height: 2rem;
-  border-bottom: 1px solid var(--color-orange);
+}
+@media only screen and (max-width: 798px) {
+  .border-about {
+    padding: 2rem;
+    width: 100vw;
+  }
 }

@@ -24,7 +24,7 @@ function NavScroll() {
           <Nav className="me-auto my-2 my-lg-0 gap-nav" navbarScroll>
             <Search />
             <Link to="/about" className="btn-orange bg-dark">
-              About
+              About The Project
             </Link>
             <Link to="/contact" className="btn-orange bg-dark">
               Contact

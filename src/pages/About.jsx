@@ -2,7 +2,15 @@ import "./about.css";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import reactIcon from "../assets/react.svg";
+import bootstrapIcon from "../assets/bootstrap.svg";
+import css3Icon from "../assets/css3.svg";
+import { useEffect } from "react";
+
 function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="about-cont w-font">
       <h1 className="title-about">About the project</h1>
@@ -18,7 +26,7 @@ function About() {
               Hack Academy
             </Link>
             's Coding Bootcamp, a full-time course with +600 hours of dedication
-            over 3 months and based in a JavaScript ecosistem. Its purpose is to
+            over 3 months and based in JavaScript's ecosistem. Its purpose is to
             be a web application for streaming movies that also provides
             detailed information about them.
           </p>
@@ -44,30 +52,26 @@ function About() {
         <Col xs={12} lg={6}>
           <h3 className="subtitle-about">Technologies</h3>
           <Row>
-            <Col>
+            <Col xs={12} md={4}>
               <div className="technologies">
-                <img
-                  src="src/assets/4691292_react native_react_icon.svg"
-                  alt=""
-                  className="about-img"
-                />
+                <img src={reactIcon} alt="react tech" className="about-img" />
                 React
               </div>
             </Col>
-            <Col>
+            <Col xs={12} md={4}>
               <div className="technologies">
                 <img
-                  src="src/assets/bootstrap.svg"
-                  alt=""
+                  src={bootstrapIcon}
+                  alt="bootstrap tech"
                   className="about-img"
                 />{" "}
                 Bootstrap
               </div>
             </Col>
-            <Col>
+            <Col xs={12} md={4}>
               <div className="technologies">
-                <img src="src/assets/css3.svg" alt="" className="about-img" />{" "}
-                CSS 3
+                <img src={css3Icon} alt="css3 tech" className="about-img" /> CSS
+                3
               </div>
             </Col>
           </Row>

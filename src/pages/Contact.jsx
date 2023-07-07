@@ -3,9 +3,15 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useForm, ValidationError } from "@formspree/react";
+import github from "../assets/github.svg";
+import linkedin from "../assets/linkedin.svg";
+import { useState } from "react";
 
 function Contact() {
   const [state, handleSubmit] = useForm("xdovnavo");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   return (
     <>
       <div className="contact-container w-font">
@@ -24,6 +30,8 @@ function Contact() {
               id="name"
               name="name"
               placeholder="John"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
               required
             />
             <label htmlFor="email" className="lg-cafe">
@@ -35,6 +43,8 @@ function Contact() {
               name="email"
               placeholder="email@example.com"
               required
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
             />
             <label htmlFor="message" className="lg-cafe">
               Message
@@ -49,6 +59,8 @@ function Contact() {
               name="message"
               placeholder="Hello..."
               required
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
             />
             <ValidationError
               prefix="Message"
@@ -73,7 +85,7 @@ function Contact() {
                 className="pt-3 link"
               >
                 <img
-                  src="src/assets/github.svg"
+                  src={github}
                   alt="Enter to my github page"
                   className="icon-card"
                 />
@@ -87,7 +99,7 @@ function Contact() {
                 className="pt-3 link"
               >
                 <img
-                  src="src/assets/linkedin.svg"
+                  src={linkedin}
                   alt="Enter to my linkedin page"
                   className="icon-card"
                 />
