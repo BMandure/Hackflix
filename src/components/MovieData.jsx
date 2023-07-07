@@ -34,7 +34,6 @@ function MovieData({ movie }) {
             setLgShow(true);
           }}
         >
-          <p className="movie-title">{movie.title}</p>
           <img
             src={
               movie.poster_path
