@@ -52,7 +52,7 @@ function Movie() {
       ) : (
         <div className="movie-cont">
           <Row className="movie-row">
-            <Col xs={12} lg={3} className="w-font">
+            <Col xs={12} md={4} lg={3} className="w-font">
               <div className="movie-info-container">
                 <div className="movie-poster">
                   <img
@@ -96,7 +96,7 @@ function Movie() {
               </div>
             </Col>
 
-            <Col xs={12} lg={9} className="w-font">
+            <Col xs={12} md={8} lg={9} className="w-font">
               <Row className="overview-container">
                 <Col xs={12} xl={6}>
                   <h2 className="lg-cafe ">Overview</h2>
