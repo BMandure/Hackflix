@@ -27,7 +27,7 @@ function NavScroll() {
               About The Project
             </Link>
             <Link to="/contact" className="btn-orange bg-dark">
-              Contact
+              Contact Me
             </Link>
           </Nav>
         </Navbar.Collapse>
