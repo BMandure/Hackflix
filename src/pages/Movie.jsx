@@ -99,10 +99,10 @@ function Movie() {
             <Col xs={12} lg={9} className="w-font">
               <Row className="overview-container">
                 <Col xs={12} xl={6}>
-                  <h2 className="lg-cafe border-title">Overview</h2>
+                  <h2 className="lg-cafe ">Overview</h2>
                   <p className="p-4">{movie.overview}</p>
                   <div className="lg-cafe">
-                    <h2 className="border-title">Genres:</h2>
+                    <h2 className="lg-cafe">Genres</h2>
                     <Row className="genre-container">
                       {movie.genres.map((genre) => (
                         <Col
@@ -123,7 +123,7 @@ function Movie() {
                   ) : (
                     <div>
                       <div className="w-100 my-3">
-                        <h2 className="lg-cafe border-title">Actors</h2>
+                        <h2 className="lg-cafe ">Actors</h2>
 
                         <CCarousel controls transition="slide" interval={3000}>
                           {actors.cast.map((actor) => (
@@ -137,7 +137,7 @@ function Movie() {
                   )}
                 </Col>
                 <Col xs={12} xl={6}>
-                  <h2 className="lg-cafe border-title">Information</h2>
+                  <h2 className="lg-cafe ">Information</h2>
                   <div className="full-item row">
                     <p className="w-50 fw-bold">Release date: </p>
                     <p className="w-50 align-right">{movie.release_date}</p>
